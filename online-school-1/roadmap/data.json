@@ -1,22 +1,20 @@
 {
   "project": "Онлайн-школа №1",
   "stage": "Шаг 1: Оформление договоров текущих клиентов",
-  "status": "preparation",
+  "status": "in_progress",
   "price": "400 000 ₽",
-  "startDate": null,
+  "startDate": "2026-04-07",
   "estimatedWeeks": "4-5",
-  "updatedAt": "2026-04-06",
+  "updatedAt": "2026-04-13",
   "phases": [
     {
       "id": 0,
       "name": "Подготовка",
-      "description": "Фиксация знаний, получение доступов, тестовые кейсы",
+      "description": "Погружение в процессы, доступы, шаблоны, тестовые кейсы",
       "status": "in_progress",
-      "progress": 15,
+      "progress": 85,
       "estimatedWeeks": "1",
       "deadline": "2026-04-15",
-      "critical": true,
-      "criticalNote": "Анастасия Якимова уходит 15.04 — без неё не стартуем",
       "tasks": [
         {
           "name": "Discovery-брифинг",
@@ -40,7 +38,7 @@
           "owner": "forge",
           "visibility": "public",
           "completedAt": "2026-04-04",
-          "note": "Python + FastAPI, read-only 1С, без зависимости от подрядчика"
+          "note": "Python + FastAPI, Google Sheets + Amo + 1С (таблица загрузки)"
         },
         {
           "name": "Коммерческое предложение",
@@ -48,71 +46,84 @@
           "owner": "forge",
           "visibility": "public",
           "completedAt": "2026-04-05",
-          "note": "Отправлено, предварительно согласовано"
+          "note": "Отправлено, согласовано"
         },
         {
-          "name": "Согласование условий и старт",
-          "status": "in_progress",
+          "name": "Подписание договора",
+          "status": "done",
           "owner": "both",
           "visibility": "public",
-          "note": "Встреча 07.04"
+          "completedAt": "2026-04-08",
+          "note": "Договор + ДС1 (ПДн) + ДС2 (NDA). Аванс 200К получен"
         },
         {
-          "name": "Сессии с Анастасией Якимовой",
-          "status": "todo",
+          "name": "Онбординг-встреча с Якимовой",
+          "status": "done",
+          "owner": "both",
+          "visibility": "public",
+          "completedAt": "2026-04-13",
+          "note": "1ч 44м. Полное погружение в процесс переоформления, разбор систем, решение по новым шаблонам"
+        },
+        {
+          "name": "Получение всех доступов",
+          "status": "done",
           "owner": "school",
           "visibility": "public",
-          "deadline": "2026-04-15",
-          "note": "2 сессии по 2-3 часа: процесс, ветвления, edge cases, формат карточки"
+          "completedAt": "2026-04-10",
+          "note": "1С УНФ, 1С Предприятие, Amo, Трекер, Google-таблицы, Вики"
         },
         {
-          "name": "Тестовые кейсы от Якимовой",
-          "status": "todo",
+          "name": "Шаблоны документов",
+          "status": "done",
           "owner": "school",
           "visibility": "public",
-          "deadline": "2026-04-15",
-          "note": "30-50 реальных переоформлений с ожидаемым результатом"
+          "completedAt": "2026-04-10",
+          "note": "Новые шаблоны Якимовой (8 файлов) + Переменные.xlsx + 70 шаблонов из 1С + юр. исходники"
         },
         {
-          "name": "Шаблоны документов (.docx)",
-          "status": "todo",
+          "name": "Тестовые кейсы (12 задач OSHDOCS)",
+          "status": "done",
           "owner": "school",
           "visibility": "public",
-          "deadline": "2026-04-15",
-          "note": "Все шаблоны для переоформления (оферта, бумажный)"
+          "completedAt": "2026-04-10",
+          "note": "24 PDF-документа из реальных задач для сверки результата автоматизации"
         },
         {
-          "name": "Доступы: API Amo, webhook Трекера, Google Sheets",
-          "status": "todo",
-          "owner": "school",
-          "visibility": "public",
-          "note": "Нужны к началу фазы 1"
+          "name": "Inventory шаблонов и data model",
+          "status": "done",
+          "owner": "forge",
+          "visibility": "internal",
+          "completedAt": "2026-04-13",
+          "note": "223 файла проанализировано, 25 переменных, CSV-анализ таблицы загрузки (42 поля)"
         },
         {
-          "name": "OData 1С — публикация endpoint",
-          "status": "todo",
-          "owner": "school",
-          "visibility": "public",
-          "note": "~1 час работы 1С-специалиста. Read-only пользователь"
-        },
-        {
-          "name": "Тест генерации документов на реальных шаблонах",
+          "name": "Техническая спецификация",
           "status": "todo",
           "owner": "forge",
-          "visibility": "internal"
+          "visibility": "internal",
+          "deadline": "2026-04-16",
+          "note": "Data model, архитектура, развилки по отправке и счёту"
+        },
+        {
+          "name": "Вторая встреча с Якимовой — закрытие блокеров",
+          "status": "todo",
+          "owner": "both",
+          "visibility": "public",
+          "note": "Отправка документов, счёт, edge cases переоформления"
         },
         {
           "name": "Настройка тестового окружения",
           "status": "todo",
           "owner": "forge",
-          "visibility": "internal"
+          "visibility": "internal",
+          "note": "VPS Yandex Cloud, Docker, PostgreSQL, LibreOffice"
         }
       ]
     },
     {
       "id": 1,
       "name": "Интеграции",
-      "description": "Подключение к системам клиента — только чтение, ничего не меняем",
+      "description": "Подключение сервиса к Google-таблице загрузки, Amo CRM и Яндекс.Трекеру",
       "status": "todo",
       "progress": 0,
       "estimatedWeeks": "1",
@@ -122,44 +133,44 @@
           "status": "todo",
           "owner": "forge",
           "visibility": "public",
-          "note": "Docker + PostgreSQL + LibreOffice. Данные в РФ"
+          "note": "Docker + PostgreSQL + LibreOffice. Данные в РФ (152-ФЗ)"
         },
         {
-          "name": "Приём задач из Яндекс.Трекера",
+          "name": "Чтение Google-таблицы загрузки заказов",
           "status": "todo",
           "owner": "forge",
           "visibility": "public",
-          "note": "Webhook → наш сервис"
+          "note": "Основной источник задач — Flow B. Polling или Google Sheets API"
         },
         {
-          "name": "Чтение данных из Amo CRM",
+          "name": "Запись в Google-таблицу загрузки",
           "status": "todo",
           "owner": "forge",
           "visibility": "public",
-          "note": "Карточка клиента по ссылке из заявки"
+          "note": "Сервис дозаполняет обогащённые поля и ставит статус"
         },
         {
-          "name": "Чтение данных из 1С",
+          "name": "Обогащение данных из Amo CRM",
           "status": "todo",
           "owner": "forge",
           "visibility": "public",
-          "note": "Договор, тариф, оплаты через OData (read-only)"
+          "note": "Email клиента, ФИО плательщика, телефон — по ссылке на сделку"
         },
         {
-          "name": "Чтение прайс-листа из Google Sheets",
+          "name": "Интеграция с Яндекс.Трекером",
           "status": "todo",
           "owner": "forge",
           "visibility": "public",
-          "note": "Цены, акции, промокоды"
+          "note": "Чтение статуса задачи OSHDOCS, обновление статуса после обработки"
         },
         {
-          "name": "Маппинг полей OData 1С",
+          "name": "OAuth2 для Amo CRM",
           "status": "todo",
           "owner": "forge",
           "visibility": "internal"
         },
         {
-          "name": "OAuth2 для Amo CRM",
+          "name": "Сервисный аккаунт Google Sheets API",
           "status": "todo",
           "owner": "forge",
           "visibility": "internal"
@@ -168,69 +179,90 @@
     },
     {
       "id": 2,
-      "name": "Бизнес-логика",
-      "description": "Учим систему делать то, что сейчас делают сотрудники",
+      "name": "Бизнес-логика и генерация документов",
+      "description": "Классификация, выбор шаблона, генерация договора из новых шаблонов Якимовой",
       "status": "todo",
       "progress": 0,
       "estimatedWeeks": "1",
       "tasks": [
         {
-          "name": "Классификатор типа договора",
+          "name": "Классификатор сценария",
           "status": "todo",
           "owner": "forge",
           "visibility": "public",
-          "note": "Оферта / бумажный, тип задачи"
+          "note": "Категория договора (Оферта / Печатный / Печатный МК) × Вариант оплаты × Тариф"
         },
         {
-          "name": "Генерация договора и счёта (PDF)",
+          "name": "Выбор шаблона из новых шаблонов Якимовой",
           "status": "todo",
           "owner": "forge",
           "visibility": "public",
-          "note": "Заполнение шаблона данными → DOCX → PDF"
+          "note": "8 новых шаблонов покрывают основной сценарий переоформления"
         },
         {
-          "name": "Карточка для сотрудника",
+          "name": "Применение справочников переменных",
           "status": "todo",
           "owner": "forge",
           "visibility": "public",
-          "note": "Итог: клиент, тариф, сумма, что создать в 1С"
+          "note": "Порядок оплаты, Доп. условия, Срок освоения — из Переменные.xlsx"
         },
         {
-          "name": "Тесты на эталонных кейсах",
+          "name": "Генерация договора (docxtpl → DOCX → PDF)",
           "status": "todo",
           "owner": "forge",
           "visibility": "public",
-          "note": "Сверка с реальными результатами от Якимовой"
+          "note": "Использование синтаксиса <<имя>> новых шаблонов через docxtpl"
+        },
+        {
+          "name": "Расчёт графика платежей",
+          "status": "todo",
+          "owner": "forge",
+          "visibility": "public",
+          "note": "Помесячная разбивка + учёт скидок из колонки Акции"
         },
         {
           "name": "Валидация входных данных",
           "status": "todo",
           "owner": "forge",
           "visibility": "internal"
+        },
+        {
+          "name": "Тесты на 12 кейсах OSHDOCS",
+          "status": "todo",
+          "owner": "forge",
+          "visibility": "public",
+          "note": "Сверка результата с реальными документами, которые прислала Якимова"
         }
       ]
     },
     {
       "id": 3,
       "name": "Доставка и контроль",
-      "description": "Отправка документов, обновление систем, обработка ошибок",
+      "description": "Отправка документов клиенту, обновление систем, обработка ошибок",
       "status": "todo",
       "progress": 0,
       "estimatedWeeks": "1",
       "tasks": [
         {
-          "name": "Отправка документов клиенту на почту",
+          "name": "Отправка документов клиенту",
           "status": "todo",
           "owner": "forge",
           "visibility": "public",
-          "note": "Договор + счёт (PDF) автоматически"
+          "note": "Механизм определяется в техспеке: через 1С UI, собственный SMTP или регламентное задание"
         },
         {
-          "name": "Обновление Amo, таблицы и Трекера",
+          "name": "Обновление Google-таблицы",
           "status": "todo",
           "owner": "forge",
           "visibility": "public",
-          "note": "Статусы обновляются автоматически"
+          "note": "Статус «заполнен», поля для 1С, ссылка на сгенерированный документ"
+        },
+        {
+          "name": "Обновление Яндекс.Трекера",
+          "status": "todo",
+          "owner": "forge",
+          "visibility": "public",
+          "note": "Комментарии по ходу обработки, статус, ссылки на результаты"
         },
         {
           "name": "Обработка нестандартных случаев",
@@ -263,11 +295,11 @@
       "estimatedWeeks": "1-2",
       "tasks": [
         {
-          "name": "Прогон на реальных данных",
+          "name": "Прогон на 12 тестовых кейсах",
           "status": "todo",
           "owner": "forge",
           "visibility": "public",
-          "note": "30-50 тестовых кейсов, сверка с эталоном"
+          "note": "Сверка результатов автоматизации с реальными документами от Якимовой"
         },
         {
           "name": "Исправление по результатам тестов",
@@ -280,14 +312,14 @@
           "status": "todo",
           "owner": "both",
           "visibility": "public",
-          "note": "Система работает параллельно, сотрудник проверяет каждый результат"
+          "note": "Система работает параллельно с существующим процессом, ДО-сотрудник проверяет каждый результат"
         },
         {
           "name": "Инструкция для сотрудников ДО",
           "status": "todo",
           "owner": "forge",
           "visibility": "public",
-          "note": "Регламент: как работать с карточкой, что проверять"
+          "note": "Регламент: как работать с автоматизированным процессом"
         },
         {
           "name": "Переключение на автоматический процесс",
