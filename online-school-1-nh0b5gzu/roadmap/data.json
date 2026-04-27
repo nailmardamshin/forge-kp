@@ -6,7 +6,7 @@
   "startDate": "2026-04-07",
   "devStartDate": "2026-04-23",
   "estimatedWeeks": "4-5",
-  "updatedAt": "2026-04-27 (вечер, после переключения архитектуры)",
+  "updatedAt": "2026-04-27",
   "phases": [
     {
       "id": 0,
@@ -273,7 +273,7 @@
       "name": "Интеграции",
       "description": "Подключение сервиса к Google Таблице с заявками, Amo CRM, Яндекс.Трекеру и 1С УНФ",
       "status": "in_progress",
-      "progress": 79,
+      "progress": 93,
       "estimatedWeeks": "1",
       "tasks": [
         {
