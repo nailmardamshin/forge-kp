@@ -272,8 +272,8 @@
       "id": 1,
       "name": "Интеграции",
       "description": "Подключение сервиса к Google Таблице с заявками, Amo CRM, Яндекс.Трекеру и 1С УНФ",
-      "status": "in_progress",
-      "progress": 95,
+      "status": "done",
+      "progress": 100,
       "estimatedWeeks": "1",
       "tasks": [
         {
